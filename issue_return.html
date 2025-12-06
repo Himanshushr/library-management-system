@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management - Issue & Return</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>📚 Library Management System</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="issue_return.html">Issue/Return</a> |
+            <a href="fine_payment.html">Fine Payment</a> |
+            <a href="membership.html">Membership</a> |
+            <a href="admin.html">Admin</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Book Issue & Return Transactions</h2>
+
+        <section>
+            <h3>1. Book Search & Availability (Book Available)</h3>
+            <form id="book_search_form">
+                <label for="search_query">Book/Movie Name or Serial No.:</label>
+                <input type="text" id="search_query" name="search_query" placeholder="Enter book title or Serial No. (e.g., SN-1001)" required>
+                
+                <p class="note">One of the text box or drop down to be filled in before submitting the form.</p>
+                <button type="submit">Search</button>
+            </form>
+
+            <section id="search_results">
+                <h4>Search Results</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Serial No.</th>
+                            <th>Available</th>
+                            <th>Select</th>
+                        </tr>
+                    </thead>
+                    <tbody id="search_results_body">
+                        <tr><td colspan="5">Search for a book above...</td></tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+
+        ---
+
+        <section>
+            <h3>2. Book Issue</h3>
+            <form id="book_issue_form">
+                <label for="name_of_book_i">Selected Book Title:</label>
+                <input type="text" id="name_of_book_i" value="[Will be auto-filled if implemented with full JS]" readonly>
+                
+                <label for="user_id_i">User ID (Mandatory, e.g., U101):</label>
+                <input type="text" id="user_id_i" required placeholder="Enter User ID to issue">
+                
+                <label for="issue_date">Issue Date:</label>
+                <input type="date" id="issue_date" readonly> 
+
+                <label for="return_date">Return Date (15 days ahead, max):</label>
+                <input type="date" id="return_date" required>
+                <p class="note">Automatically populated with a date 15 days ahead. Can be edited to a date earlier than that. But not greater than 15 days.</p>
+
+                <button type="submit">Issue Book</button>
+                <p id="issue_message" class="note"></p> </form>
+        </section>
+
+        ---
+
+        <section>
+            <h3>3. Return Book</h3>
+            <form id="return_book_form">
+                <label for="serial_no_r">Serial No of the book (Mandatory):</label>
+                <input type="text" id="serial_no_r" required placeholder="Enter Serial No. of book being returned">
+                
+                <label for="return_date_r">Actual Return Date:</label>
+                <input type="date" id="return_date_r"> 
+                <p class="note">It can be edited to a date earlier or later than that for fine calculation.</p>
+                
+                <button type="submit">Initiate Return (Check Fine)</button>
+                <p id="return_message" class="note"></p> </form>
+        </section>
+    </main>
+</body>
+</html>

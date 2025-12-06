@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Management - Fine Payment</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <h2>💸 Fine Payment</h2>
+
+        <form id="fine_payment_form">
+            <h3>Pay Fine Confirmation</h3>
+            <p class="note">All fields are populated except Fine Paid and Remarks. Use the back button to mock successful navigation from return.</p>
+            
+            <label for="loan_index_h">Transaction ID (Hidden):</label>
+            <input type="text" id="loan_index_h" value="N/A" readonly required>
+
+            <label for="calculated_fine">Calculated Fine:</label>
+            <input type="text" id="calculated_fine" value="0.00 INR" readonly>
+
+            <label for="fine_paid">Fine Paid (Required):</label>
+            <input type="number" id="fine_paid" min="0" required>
+            
+            <label for="remarks_fine">Remarks (Mandatory):</label>
+            <textarea id="remarks_fine" rows="2" required></textarea>
+            
+            <label for="pending_fine">Pending Fine Checkbox:</label>
+            <input type="checkbox" id="pending_fine" name="pending_fine">
+            <span class="note">Select if the full fine is not being paid.</span>
+
+            <button type="submit">Confirm Payment</button>
+            <p id="fine_message" class="note"></p>
+        </form>
+    </main>
+</body>
+</html>

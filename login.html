@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        /* Simple styling for the login page */
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .password-container {
+            position: relative;
+        }
+        /* Passwords need to be hidden when typed on the login pages */
+        .password-toggle {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            user-select: none;
+            font-size: 0.9em;
+            color: #555;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Library Management Login</h2>
+        <form id="login_form">
+            <label for="username">Username (Admin: admin/1234, User: user/guest):</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Password:</label>
+            <div class="password-container">
+                <input type="password" id="password" required>
+                <span class="password-toggle" id="togglePassword">Show</span>
+            </div>
+            
+            <button type="submit">Login</button>
+            <p id="login_message" class="note" style="margin-top: 15px;"></p>
+        </form>
+
+        <hr style="margin: 20px 0;">
+        
+        <a href="/index.html" style="display: block; text-align: center; color: #337ab7; text-decoration: none;">
+            or **Continue to System Overview**
+        </a>
+        <p class="note" style="text-align: center; font-size: 0.8em;">(Note: This bypasses authentication)</p>
+
+    </div>
+</body>
+</html>

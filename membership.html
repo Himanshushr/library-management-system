@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Management - Membership</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <h2>👤 Membership Management</h2>
+
+        <section>
+            <h3>1. Add Membership</h3>
+            <form id="add_membership_form">
+                <label for="member_name">Member Name (Mandatory):</label>
+                <input type="text" id="member_name" required>
+                
+                <label>Membership Duration:</label>
+                <input type="radio" name="duration" value="6 months" checked> 6 months (Default)
+                <input type="radio" name="duration" value="1 year"> 1 year
+                <p class="note">By default - 6 months is selected.</p>
+                
+                <button type="submit">Add Membership</button>
+                <p id="add_member_message" class="note"></p>
+                <p class="error-message">An error message to be thrown on the page if user does not enter all details and confirms the form.</p>
+            </form>
+        </section>
+
+        ---
+
+        <section>
+            <h3>2. Update/Extend Membership</h3>
+            <form id="update_membership_form">
+                <label for="update_user_id">User ID (Mandatory):</label>
+                <input type="text" id="update_user_id" placeholder="Enter User ID" required>
+                
+                <label>Extension Option:</label>
+                <input type="radio" name="extension_duration" value="6 months" checked> 6 months extension
+                <p class="note">By default - six months extension of membership selected.</p>
+                
+                <button type="submit">Update Membership</button>
+                <p id="update_member_message" class="note"></p>
+            </form>
+        </section>
+
+        ---
+
+        <section>
+            <h3>3. User Management</h3>
+            <form id="user_management_form">
+                <label for="manage_user_id">User ID (Mandatory):</label>
+                <input type="text" id="manage_user_id" placeholder="Enter User ID" required>
+                
+                <label>User Option:</label>
+                <input type="radio" name="user_option" value="existing" checked> Existing
+                <input type="radio" name="user_option" value="new"> New (Use Add Membership)
+                <p class="note">One of the options new or existing to be selected. By default - new.</p>
+                
+                <button type="submit">View User Details</button>
+                <p id="user_manage_message" class="note"></p>
+            </form>
+            
+            <div id="user_details_display" style="border: 1px dashed #ccc; padding: 10px; margin-top: 15px; display: none;">
+                <h4>Fetched Details:</h4>
+                <pre id="user_details_pre"></pre>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
